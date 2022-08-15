@@ -42,7 +42,7 @@ namespace Dflat.Construction
 
         public static BaseDurationedDurationBuilder SixtyFourth() => BaseDurationedDurationBuilder.Create(BaseDuration.SixtyFourth);
 
-        public static BaseDurationedDurationBuilder HundredTwentyEighth() => BaseDurationedDurationBuilder.Create(BaseDuration.HundredTwentyEighth)
+        public static BaseDurationedDurationBuilder HundredTwentyEighth() => BaseDurationedDurationBuilder.Create(BaseDuration.HundredTwentyEighth);
     }
 
    

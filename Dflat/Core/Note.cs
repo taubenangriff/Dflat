@@ -15,11 +15,6 @@ namespace Dflat.Core
         public override Duration Duration { get; init; }
         public override ProgressionElementType ElementType { get; } = ProgressionElementType.Note;
 
-        internal Note(Pitch pitch)
-        {
-            Pitch = pitch;
-        }
-
         internal Note(Pitch pitch, Duration duration)
         {
             Pitch = pitch;

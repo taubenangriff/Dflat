@@ -62,6 +62,6 @@ namespace Dflat.Construction
             return this;
         }
 
-        public Note GetResult() => new Note(PitchBuilder.GetResult());
+        public Note GetResult() => new Note(PitchBuilder.GetResult(), DurationBuilder.GetResult());
     }
 }

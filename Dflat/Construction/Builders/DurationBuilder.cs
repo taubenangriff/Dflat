@@ -5,7 +5,7 @@ namespace Dflat.Construction
     public class DurationBuilder : IBuilder<Duration>
     {
         public BaseDuration BaseDuration { get; private set; }
-        public DurationAccidental? DurationAccidental { get; private set; };
+        public DurationAccidental? DurationAccidental { get; private set; }
         
         private DurationBuilder(
             BaseDuration baseDuration, 
