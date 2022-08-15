@@ -2,6 +2,8 @@
 {
     public enum BaseDuration
     {
+        Maxima,
+        Longa,
         DoubleWhole,
         Whole,
         Half,

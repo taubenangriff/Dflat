@@ -26,6 +26,10 @@ namespace Dflat.Construction
             public DurationBuilder WithThreeDots() => DurationBuilder.Create(BaseDuration, DurationAccidentals.ThreeDots);
         }
 
+        public static BaseDurationedDurationBuilder Maxima() => BaseDurationedDurationBuilder.Create(BaseDuration.Maxima);
+
+        public static BaseDurationedDurationBuilder Longa() => BaseDurationedDurationBuilder.Create(BaseDuration.Longa);
+
         public static BaseDurationedDurationBuilder DoubleWhole() => BaseDurationedDurationBuilder.Create(BaseDuration.DoubleWhole);
         
         public static BaseDurationedDurationBuilder Whole() => BaseDurationedDurationBuilder.Create(BaseDuration.Whole);
