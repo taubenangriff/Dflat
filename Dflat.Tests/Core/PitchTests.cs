@@ -33,7 +33,7 @@ namespace Dflat.Tests.Core
             var pitch1 = Pitches.Small().G().Flat().GetResult();
             var pitch2 = Pitches.Small().F().Sharp().GetResult();
 
-            Assert.Equal(0, pitch1.CompareEnharmonicTo(pitch2));
+            Assert.Equal(0, pitch1.CompareTo(pitch2));
         }
 
         [Fact]
@@ -42,8 +42,8 @@ namespace Dflat.Tests.Core
             var pitch1 = Pitches.Small().G().Flat().GetResult();
             var pitch2 = Pitches.Small().F().Sharp().GetResult();
 
-            Assert.Equal(0, pitch1.CompareEnharmonicTo(pitch2));
-            Assert.NotEqual(0, pitch1.CompareTo(pitch2));
+            Assert.Equal(0, pitch1.CompareTo(pitch2));
+            Assert.False(pitch1.Equals(pitch2));
         }
     }
 }
