@@ -6,7 +6,7 @@
         public IntervalDirection Direction { get; }
         public IntervalModifier Modifier { get; }
 
-        public bool IsPerfect {get;}
+        public bool IsPerfect { get; }
 
         public Interval(
             BaseInterval baseInterval, 

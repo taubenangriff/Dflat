@@ -1,6 +1,6 @@
 ﻿using Dflat.Core;
 //All Creation logic is in the Dflat.Construction namespace.
-using Dflat.Construction;
+using Dflat.Core.Construction;
 
 namespace Dflat.Examples
 {
