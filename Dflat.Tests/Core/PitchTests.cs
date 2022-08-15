@@ -45,5 +45,15 @@ namespace Dflat.Tests.Core
             Assert.Equal(0, pitch1.CompareTo(pitch2));
             Assert.False(pitch1.Equals(pitch2));
         }
+
+        [Fact]
+        public void PitchAccidentalsCorrectComparison()
+        {
+            var pitch1 = Pitches.Small().G().DoubleFlat().GetResult();
+            var pitch2 = Pitches.Small().F().DoubleSharp().GetResult();
+
+            int compared = pitch1.CompareTo(pitch2);
+            Assert.True(compared < 0);
+        }
     }
 }
