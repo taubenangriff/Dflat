@@ -1,4 +1,4 @@
-﻿namespace Dflat.Construction
+﻿namespace Dflat.Core
 {
     //Just an interface so I keep everything clean.
     internal interface IBuilder<TResult>

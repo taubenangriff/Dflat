@@ -1,6 +1,4 @@
-﻿using Dflat.Core;
-
-namespace Dflat.Construction
+﻿namespace Dflat.Core.Construction
 {
     public class NoteBuilder : IBuilder<Note>
     {
