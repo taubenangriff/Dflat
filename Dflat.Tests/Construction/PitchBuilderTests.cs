@@ -1,7 +1,7 @@
 ﻿using Xunit;
 
-using Dflat.Construction;
 using Dflat.Core;
+using Dflat.Core.Construction;
 
 namespace Dflat.Tests.Construction
 {
@@ -219,5 +219,6 @@ namespace Dflat.Tests.Construction
 
             Assert.Equal(expected, newNote);
         }
+
     }
 }

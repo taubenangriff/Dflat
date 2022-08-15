@@ -1,5 +1,4 @@
-﻿using Dflat.Construction;
-using Dflat.Core;
+﻿using Dflat.Core.Construction;
 using Xunit;
 
 namespace Dflat.Tests.Core
