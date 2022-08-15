@@ -69,6 +69,18 @@ namespace Dflat.Construction
             return this;
         }
 
+        public PitchBuilder OctaveUp()
+        {
+            Octave = Octave.NextOctave();
+            return this;
+        }
+
+        public PitchBuilder OctaveDown()
+        {
+            Octave = Octave.PreviousOctave();
+            return this;
+        }
+
         public PitchBuilder WithAccidental(IHalfToneAccidental accidental)
         {
             Accidental = accidental;

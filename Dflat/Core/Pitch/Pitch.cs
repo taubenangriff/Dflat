@@ -10,12 +10,12 @@
         public IHalfToneAccidental? Accidental { get; init; }
         public IFluentAccidental? AdditionalCentAccidental { get; init; }
 
-        private float accidentalSum;
+        public float AccidentalAlteration { get; }
 
         private float fullSum => 
                 ((float)Octave * 12)
                 + (float)BasePitch
-                + accidentalSum;
+                + AccidentalAlteration;
 
         public Pitch(
             BasePitch pitch, 
@@ -28,7 +28,7 @@
             Accidental = accidental;
             AdditionalCentAccidental = additionalCentAccidental;
 
-            accidentalSum = Accidental?.PitchShift ?? 0 + AdditionalCentAccidental?.PitchShift ?? 0;
+            AccidentalAlteration = Accidental?.PitchShift ?? 0 + AdditionalCentAccidental?.PitchShift ?? 0;
         }
 
         public override string ToString()
@@ -61,7 +61,7 @@
 
             return Octave.Equals(other_pitch.Octave)
                 && BasePitch.Equals(other_pitch.BasePitch)
-                && accidentalSum.Equals(other_pitch.accidentalSum);
+                && AccidentalAlteration.Equals(other_pitch.AccidentalAlteration);
         }
     }
 }
