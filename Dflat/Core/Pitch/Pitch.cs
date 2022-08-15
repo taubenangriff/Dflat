@@ -35,6 +35,9 @@
 
         public bool HasAdditionalCentAccidental() => AdditionalCentAccidental is not null;
 
+        //Todo CompareTo => equivalence 
+        //Todo Equals => equality
+
         public int CompareTo(Pitch? other)
         {
             if (other is not Pitch other_pitch) return -1;

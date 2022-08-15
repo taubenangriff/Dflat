@@ -2,7 +2,7 @@
 
 namespace Dflat.Construction
 {
-    public class PitchBuilder
+    public class PitchBuilder : IBuilder<Pitch>
     {
         public BasePitch BasePitch { get; private set; }
         public Octave Octave { get; private set; }
@@ -44,6 +44,15 @@ namespace Dflat.Construction
         public static PitchBuilder Create(BasePitch pitch, Octave octave)
         {
             return new PitchBuilder(pitch, octave);
+        }
+
+        /// <summary>
+        /// Creates a PitchBuilder on Middle C;
+        /// </summary>
+        /// <returns></returns>
+        public static PitchBuilder Create()
+        {
+            return Pitches.Small().C().Natural();
         }
 
         public PitchBuilder IncreaseBasePitch()

@@ -16,10 +16,17 @@ namespace Dflat.Examples
             Pitch pitch = builder.GetResult();
         }
 
+        public static void CreateDuration()
+        {
+            //Use Durations.<BaseLength>().<Dots?>();
+            //to instantiate a new DurationBuilder with the specified Duration.
+            DurationBuilder builder = Durations.Quarter().WithDot();
+            Duration duration = builder.GetResult();
+        }
+
         public static void UsePitchBuilder()
         {
             //Each Operation from a Builder returns the Builder itself, so you can chain operations together.
-            //This is not just true for the PitchBuilder but for all Builders
             PitchBuilder builder = Pitches.Small().F().Sharp();
 
             builder = builder.Sharpened().IncreaseBasePitch().Flattened();
@@ -32,7 +39,11 @@ namespace Dflat.Examples
                 //Use the WithPitch Method to freely set the Pitch of the Note using a PitchBuilder.
                 .WithPitch(Pitches.Low().A().Natural())
                 //Use the ModifyCurrentPitch Method to work with the current PitchBuilder
-                .ModifyCurrentPitch(pitchBuilder => pitchBuilder.Sharpened());
+                .ModifyCurrentPitch(pitchBuilder => pitchBuilder.Sharpened())
+                //Use WithDuration Method to freely set the duration
+                .WithDuration(Durations.Quarter().WithDot())
+                //Use ModifyDuration Method to work with the current DurationBuilder
+                .ModifyDuration( durationBuilder => durationBuilder.WithoutDot());
 
             Note note = builder.GetResult();
         }
