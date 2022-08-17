@@ -13,7 +13,7 @@
             return NoteBuilder.Create(note)
                 .ModifyCurrentPitch(
                     (pitch) => pitch.Sharpened(PreferExtraSharp))
-                .GetResult();
+                .Build();
         }
 
         public static Note Flattened(this Note note, bool PreferExtraFlat = false)
@@ -21,7 +21,7 @@
             return NoteBuilder.Create(note)
                 .ModifyCurrentPitch(
                     (pitch) => pitch.Flattened(PreferExtraFlat))
-                .GetResult();
+                .Build();
         }
     }
 }

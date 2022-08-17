@@ -12,10 +12,10 @@ namespace Dflat.Tests.Construction
         public void CorrectlyTransposesMajorThird()
         {
             Interval interval = new Interval(BaseInterval.Third, IntervalDirection.Up);
-            Pitch expected = Pitches.OneLined().B().Natural().GetResult();
+            Pitch expected = Pitches.OneLined().B().Natural().Build();
 
             var builder = Pitches.OneLined().G().Natural();
-            var newNote = builder.TransposeBy(interval).GetResult();
+            var newNote = builder.TransposeBy(interval).Build();
 
             Assert.Equal(expected, newNote);
         }
@@ -24,10 +24,10 @@ namespace Dflat.Tests.Construction
         public void CorrectlyTransposesAugmentedThird()
         {
             Interval interval = new Interval(BaseInterval.Third, IntervalDirection.Up, IntervalModifier.Augmented);
-            Pitch expected = Pitches.OneLined().B().Sharp().GetResult();
+            Pitch expected = Pitches.OneLined().B().Sharp().Build();
 
             var builder = Pitches.OneLined().G().Natural();
-            var newNote = builder.TransposeBy(interval).GetResult();
+            var newNote = builder.TransposeBy(interval).Build();
 
             Assert.Equal(expected, newNote);
         }

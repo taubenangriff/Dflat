@@ -13,7 +13,7 @@
             DurationAccidental = durationAccidental;
         }
 
-        public Duration GetResult()
+        public Duration Build()
         {
             return new Duration(BaseDuration, DurationAccidental);
         }

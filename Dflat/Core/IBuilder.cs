@@ -6,6 +6,6 @@
         static IBuilder<TResult> Create(TResult fromResult) => throw new NotImplementedException();
         static IBuilder<TResult> Create() => throw new NotImplementedException();
 
-        TResult GetResult();
+        TResult Build();
     }
 }

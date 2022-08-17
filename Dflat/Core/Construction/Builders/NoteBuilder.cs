@@ -60,6 +60,6 @@
             return this;
         }
 
-        public Note GetResult() => new Note(PitchBuilder.GetResult(), DurationBuilder.GetResult());
+        public Note Build() => new Note(PitchBuilder.Build(), DurationBuilder.Build());
     }
 }

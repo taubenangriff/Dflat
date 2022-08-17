@@ -28,7 +28,7 @@ namespace Dflat.Intervals.Construction
             return new IntervalBuilder(i.BaseInterval, i.Modifier, i.Direction);
         }
 
-        public Interval GetResult()
+        public Interval Build()
         {
             return new Interval(BaseInterval, Direction, Modifier);
         }

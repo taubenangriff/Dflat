@@ -7,7 +7,7 @@
         public IHalfToneAccidental? Accidental { get; private set; }
         public IFluentAccidental? AdditionalCentAccidental { get; private set; }
 
-        public Pitch GetResult() => new Pitch(BasePitch, Octave, Accidental, AdditionalCentAccidental);
+        public Pitch Build() => new Pitch(BasePitch, Octave, Accidental, AdditionalCentAccidental);
 
         private PitchBuilder(Pitch p)
         {
