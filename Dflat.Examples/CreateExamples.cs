@@ -12,8 +12,8 @@ namespace Dflat.Examples
             //to instantiate a new PitchBuilder with the specified Pitch.
             PitchBuilder builder = Pitches.Small().F().Sharp();
 
-            //Use GetResult() to get a pitch from the PitchBuilder;
-            Pitch pitch = builder.GetResult();
+            //Use Build() to get a pitch from the PitchBuilder;
+            Pitch pitch = builder.Build();
         }
 
         public static void CreateDuration()
@@ -21,7 +21,7 @@ namespace Dflat.Examples
             //Use Durations.<BaseLength>().<Dots?>();
             //to instantiate a new DurationBuilder with the specified Duration.
             DurationBuilder builder = Durations.Quarter().WithDot();
-            Duration duration = builder.GetResult();
+            Duration duration = builder.Build();
         }
 
         public static void UsePitchBuilder()
@@ -45,7 +45,7 @@ namespace Dflat.Examples
                 //Use ModifyDuration Method to work with the current DurationBuilder
                 .ModifyDuration( durationBuilder => durationBuilder.WithoutDot());
 
-            Note note = builder.GetResult();
+            Note note = builder.Build();
         }
 
     }
