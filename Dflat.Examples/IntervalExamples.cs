@@ -7,7 +7,7 @@ namespace Dflat.Examples
     {
         public static void CreateInterval()
         {
-            var interval = AllIntervals.Perfect().Fifth().Up();
+            var interval = MainIntervals.Perfect().Fifth().Up();
         }
     }
 }

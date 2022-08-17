@@ -1,6 +1,6 @@
 ﻿namespace Dflat.Intervals.Construction
 {
-    public static class AllIntervals
+    public static class MainIntervals
     {
         public static MajorMinorIntervalModifierBuilder Minor() => MajorMinorIntervalModifierBuilder.Create(IntervalModifier.Minor);
 
