@@ -1,6 +1,10 @@
-﻿using Dflat.Core;
+﻿using Dflat.Chords;
+using Dflat.Chords.Construction;
+using Dflat.Core;
 //All Creation logic is in the Dflat.Construction namespace.
 using Dflat.Core.Construction;
+using Dflat.Intervals;
+using Dflat.Intervals.Construction;
 
 namespace Dflat.Examples
 {
@@ -46,6 +50,31 @@ namespace Dflat.Examples
                 .ModifyDuration( durationBuilder => durationBuilder.WithoutDot());
 
             Note note = builder.Build();
+        }
+
+        public static void CreateChord()
+        {
+            ChordBuilder builder = ChordBuilder.Create()
+                //Add A, C# and E to the chord
+                .AddPitch(Pitches.Small().A().Natural())
+                .AddPitch(Pitches.OneLined().C().Sharp())
+                .AddPitch(Pitches.OneLined().E().Natural())
+                //Set duration to be a quarter note.
+                .WithDuration(Durations.Quarter().WithoutDot());
+
+            Chord c = builder.Build();
+        }
+
+        public static void CreateChordWithRootAndIntervals()
+        {
+            ChordBuilder builder = ChordBuilder.Create()
+                //Add A, C# and E to the chord
+                .WithRootNote(Pitches.Small().A().Natural())
+                .AddInterval(MainIntervals.Diminished().Ninth().Up().Build());
+
+            var chord = builder.Build();
+
+            Console.WriteLine(String.Join(" ", chord.Pitches.Select(x => x.ToString())));
         }
 
     }
