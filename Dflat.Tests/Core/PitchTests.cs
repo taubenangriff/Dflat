@@ -12,7 +12,7 @@ namespace Dflat.Tests.Core
             var pitch1 = Pitches.Small().G().Flat().Build();
             var pitch2 = Pitches.Small().F().Sharp().Build();
 
-            Assert.True(pitch1.EnharmonicTo(pitch2));
+            Assert.True(pitch1.IsEnharmonicTo(pitch2));
         }
 
         [Fact]
@@ -22,7 +22,7 @@ namespace Dflat.Tests.Core
             var pitch1 = Pitches.Small().G().Flat().Build();
             var pitch2 = Pitches.Small().F().Sharp().Build();
 
-            Assert.True(pitch1.EnharmonicTo(pitch2));
+            Assert.True(pitch1.IsEnharmonicTo(pitch2));
             Assert.False(pitch1.Equals(pitch2));
         }
 
