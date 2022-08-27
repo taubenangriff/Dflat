@@ -21,20 +21,32 @@
 
         public int GetHalfSteps()
         {
+            return GetBaseHalfSteps() + GetModifierHalfSteps();
+        }
+
+        public int GetBaseHalfSteps()
+        {
             int self = (int)BaseInterval;
+            int directionfactor = Direction.Equals(IntervalDirection.Down) ? -1 : 1;
+
+            return self*directionfactor;
+        }
+
+        public int GetModifierHalfSteps()
+        {
             int directionfactor = Direction.Equals(IntervalDirection.Down) ? -1 : 1;
             switch (Modifier)
             {
                 case IntervalModifier.Augmented:
-                    return (self + 1) * directionfactor;
+                    return (1) * directionfactor;
                 case IntervalModifier.Diminished when IsPerfect:
-                    return (self - 1) * directionfactor;
+                    return (-1) * directionfactor;
                 case IntervalModifier.Diminished when !IsPerfect:
-                    return (self - 2) * directionfactor;
+                    return (-2) * directionfactor;
                 case IntervalModifier.Minor when !IsPerfect:
-                    return (self - 1) * directionfactor;
+                    return (-1) * directionfactor;
             }
-            return self * directionfactor;
+            throw new InvalidProgramException("Unsupported IntervalModifier");
         }
     }
 }
