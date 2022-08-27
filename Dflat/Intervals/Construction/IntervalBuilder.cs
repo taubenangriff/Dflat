@@ -3,7 +3,7 @@ using Dflat.Core;
 
 namespace Dflat.Intervals.Construction
 {
-    public class IntervalBuilder : IBuilder<Interval>
+    public class IntervalBuilder : IBuilder<Interval, IntervalBuilder>
     {
         public BaseInterval BaseInterval { get; private set; }
         public IntervalModifier Modifier { get; private set; }
@@ -19,9 +19,11 @@ namespace Dflat.Intervals.Construction
         }
 
         public static IntervalBuilder Create()
-        { 
-            throw new NotImplementedException();
+        {
+            return new IntervalBuilder(BaseInterval.Unison, IntervalModifier.Major, IntervalDirection.Up);
         }
+
+        public IntervalBuilder DeepClone() => IntervalBuilder.Create(this.Build());
 
         public static IntervalBuilder Create(Interval i)
         {

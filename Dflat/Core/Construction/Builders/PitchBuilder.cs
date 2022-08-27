@@ -1,6 +1,6 @@
 ﻿namespace Dflat.Core.Construction
 {
-    public class PitchBuilder : IBuilder<Pitch>
+    public class PitchBuilder : IBuilder<Pitch, PitchBuilder>
     {
         public BasePitch BasePitch { get; private set; }
         public Octave Octave { get; private set; }
@@ -52,6 +52,8 @@
         {
             return Pitches.Small().C().Natural();
         }
+
+        public PitchBuilder DeepClone() => PitchBuilder.Create(this.Build());
 
         public PitchBuilder IncreaseBasePitch()
         {
@@ -122,21 +124,35 @@
         /// <param name="cents"></param>
         public PitchBuilder ApplyCents(int cents) => WithFluentAccidental(CentAccidental.FromCents(cents));
 
+        public PitchBuilder FlattenedTimes(int times, bool PreferExtraFlats = false)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                Flattened(PreferExtraFlats);
+            }
+            return this;
+        }
+
         /// <summary>
         /// </summary>
         /// <param name="PreferExtraFlats">If true, and the note already has a flat accidental, the note gets a double flat accidental instead of decreasing the base pitch.</param>
         public PitchBuilder Flattened(bool PreferExtraFlats = false)
         {
+            //if we are at a half tone, preferExtraFlats only ever will produce one Flat.
+            if (BasePitch.IsHalfToneToPrevious())
+            {
+                if (PreferExtraFlats && Accidental is null)
+                    Accidental = Accidentals.Flat;
+                else if (PreferExtraFlats && Accidental is not null && Accidental!.HalfToneAccidentalType == HalfToneAccidentalType.Flat)
+                    Accidental = Accidentals.DoubleFlat;
+                else
+                    DecreaseBasePitch();
+
+                return this;
+            }
+            //in case there is no accidental, just sharpen
             if (Accidental is null)
             {
-                if (BasePitch.IsHalfToneToPrevious())
-                {
-                    if (PreferExtraFlats)
-                        Accidental = Accidentals.Flat;
-                    else
-                        DecreaseBasePitch();
-                    return this;
-                }
                 Accidental = Accidentals.Flat;
                 return this;
             }
@@ -169,23 +185,38 @@
             return this;
         }
 
+        public PitchBuilder SharpenedTimes(int times, bool PreferExtraSharp = false)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                Sharpened(PreferExtraSharp);
+            }
+            return this;
+        }
+
         /// <param name="PreferDoubleFlat">If true, and the note already has a sharp accidental, the note gets a double sharp accidental instead of increasing the base pitch.</param>
         public PitchBuilder Sharpened(bool PreferExtraSharp = false)
         {
+            //if we are at a half tone, preferExtraSharp only ever will produce one Sharp.
+            if (BasePitch.IsHalfToneToNext())
+            {
+                if (PreferExtraSharp && Accidental is null)
+                    Accidental = Accidentals.Sharp;
+                else if(PreferExtraSharp && Accidental is not null && Accidental!.HalfToneAccidentalType == HalfToneAccidentalType.Sharp)
+                    Accidental = Accidentals.DoubleSharp;
+                else
+                    IncreaseBasePitch();
+
+                return this;
+            }
+            //in case there is no accidental, just sharpen
             if (Accidental is null)
             {
-                if (BasePitch.IsHalfToneToNext())
-                {
-                    if (PreferExtraSharp)
-                        Accidental = Accidentals.Sharp;
-                    else
-                        IncreaseBasePitch();
-                    return this;
-                }
                 Accidental = Accidentals.Sharp;
                 return this;
             }
 
+            //default tones
             switch (Accidental.HalfToneAccidentalType)
             {
                 case HalfToneAccidentalType.Sharp:
@@ -213,6 +244,11 @@
                     break;
             }
             return this;
+        }
+
+        public PitchBuilder TransposeByHalfSteps(int times, bool PreferExtraAccidentals = false)
+        {
+            return times > 0 ? SharpenedTimes(times, PreferExtraAccidentals) : FlattenedTimes(times * -1, PreferExtraAccidentals);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Dflat.Core.Construction
 {
-    public class NoteBuilder : IBuilder<Note>
+    public class NoteBuilder : IBuilder<Note, NoteBuilder>
     {
         public PitchBuilder PitchBuilder { get; private set; }
 
@@ -61,5 +61,7 @@
         }
 
         public Note Build() => new Note(PitchBuilder.Build(), DurationBuilder.Build());
+
+        public NoteBuilder DeepClone() => NoteBuilder.Create(this.Build());
     }
 }

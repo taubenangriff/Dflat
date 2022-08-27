@@ -1,6 +1,6 @@
 ﻿namespace Dflat.Core.Construction
 {
-    public class DurationBuilder : IBuilder<Duration>
+    public class DurationBuilder : IBuilder<Duration, DurationBuilder>
     {
         public BaseDuration BaseDuration { get; private set; }
         public DurationAccidental? DurationAccidental { get; private set; }
@@ -17,6 +17,8 @@
         {
             return new Duration(BaseDuration, DurationAccidental);
         }
+
+        public DurationBuilder DeepClone() => DurationBuilder.Create(this.Build());
 
         public static DurationBuilder Create(BaseDuration baseDuration, DurationAccidental? durationAccidental = null)
         {
