@@ -49,7 +49,7 @@
             return fullSum.CompareTo(other_pitch.fullSum);
         }
 
-        public bool EnharmonicTo(Pitch? other)
+        public bool IsEnharmonicTo(Pitch? other)
         {
             if (other is not Pitch other_pitch) return false;
             return fullSum == other_pitch.fullSum;
