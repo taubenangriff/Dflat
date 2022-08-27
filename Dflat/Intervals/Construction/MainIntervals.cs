@@ -8,6 +8,10 @@
 
         public static AugDimIntervalModifierBuilder Augmented() => AugDimIntervalModifierBuilder.Create(IntervalModifier.Augmented);
 
+        public static MajorMinorIntervalModifierBuilder Sharp() => Major();
+
+        public static MajorMinorIntervalModifierBuilder Flat() => Minor();
+
         public static AugDimIntervalModifierBuilder Diminished() => AugDimIntervalModifierBuilder.Create(IntervalModifier.Diminished);
 
         public static PerfectIntervalModifierBuilder Perfect() => PerfectIntervalModifierBuilder.Create();
