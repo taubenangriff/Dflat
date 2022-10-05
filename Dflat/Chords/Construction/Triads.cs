@@ -34,6 +34,22 @@ namespace Dflat.Chords.Construction
                 .WithRootNote(pitch, false);
         }
 
+        public static ChordBuilder DominantSeventhOn(PitchBuilder pitch)
+        {
+            return TriadBuilder.Create()
+                .AddMajorTriadOn(pitch)
+                .AddInterval(MainIntervals.Minor().Seventh().Up())
+                .WithRootNote(pitch, false);
+        }
+
+        public static ChordBuilder MajorSeventhOn(PitchBuilder pitch)
+        {
+            return TriadBuilder.Create()
+                .AddMajorTriadOn(pitch)
+                .AddInterval(MainIntervals.Major().Seventh().Up())
+                .WithRootNote(pitch, false);
+        }
+
         public static ChordBuilder FullDiminishedTriadOn(PitchBuilder pitch)
         {
             return TriadBuilder.Create()
