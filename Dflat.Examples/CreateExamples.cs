@@ -68,11 +68,21 @@ namespace Dflat.Examples
         public static void CreateChordWithRootAndIntervals()
         {
             ChordBuilder builder = ChordBuilder.Create()
-                //Add A, C# and E to the chord
                 .WithRootNote(Pitches.Small().A().Natural())
-                .AddInterval(MainIntervals.Diminished().Ninth().Up().Build());
+                //Add diminished ninth (Bbb to the chord)
+                .AddInterval(MainIntervals.Diminished().Ninth().Up());
 
             var chord = builder.Build();
+
+            Console.WriteLine(String.Join(" ", chord.Pitches.Select(x => x.ToString())));
+        }
+
+        public static void CreateDominantCChord()
+        {
+            var triadBuilder = Triads.MajorTriadOn(Pitches.Low().C().Natural());
+            triadBuilder.AddInterval(MainIntervals.Minor().Seventh().Up());
+            
+            var chord = triadBuilder.Build();
 
             Console.WriteLine(String.Join(" ", chord.Pitches.Select(x => x.ToString())));
         }

@@ -10,7 +10,7 @@ namespace Dflat.Examples
     {
         public static void Main(String[] args)
         {
-            CreateExamples.CreateChordWithRootAndIntervals();
+            CreateExamples.CreateDominantCChord();
         }
     }
 }

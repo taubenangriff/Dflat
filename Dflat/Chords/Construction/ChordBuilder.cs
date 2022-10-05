@@ -5,9 +5,9 @@ namespace Dflat.Chords.Construction
 {
     public class ChordBuilder : IBuilder<Chord, ChordBuilder>
     {
-        public DurationBuilder DurationBuilder { get; private set; }
+        public DurationBuilder DurationBuilder { get; protected set; }
 
-        public ICollection<PitchBuilder> PitchBuilders { get; private set; }
+        public ICollection<PitchBuilder> PitchBuilders { get; protected set; }
         public PitchBuilder? RootNote { get; private set; } = null;
 
         protected ChordBuilder(DurationBuilder durationBuilder)

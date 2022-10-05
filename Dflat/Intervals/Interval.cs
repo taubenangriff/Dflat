@@ -45,6 +45,8 @@
                     return (-2) * directionfactor;
                 case IntervalModifier.Minor when !IsPerfect:
                     return (-1) * directionfactor;
+                case IntervalModifier.Major:
+                    return 0;
             }
             throw new InvalidProgramException("Unsupported IntervalModifier");
         }
