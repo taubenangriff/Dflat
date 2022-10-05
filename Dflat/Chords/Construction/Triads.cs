@@ -67,5 +67,14 @@ namespace Dflat.Chords.Construction
                 .AddInterval(MainIntervals.Augmented().Fourth().Up())
                 .AddInterval(MainIntervals.Augmented().Sixth().Up());
         }
+
+        public static ChordBuilder ItalianSixthOn(PitchBuilder pitch)
+        {
+            return ChordBuilder.Create()
+                .WithRootNote(pitch, false)
+                .AddPitch(pitch)
+                .AddInterval(MainIntervals.Major().Third().Up())
+                .AddInterval(MainIntervals.Augmented().Sixth().Up());
+        }
     }
 }
