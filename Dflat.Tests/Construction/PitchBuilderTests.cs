@@ -1,7 +1,6 @@
 ﻿using Xunit;
 
 using Dflat.Core;
-using Dflat.Core.Construction;
 
 namespace Dflat.Tests.Construction
 {

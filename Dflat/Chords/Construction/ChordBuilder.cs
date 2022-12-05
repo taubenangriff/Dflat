@@ -1,7 +1,6 @@
 ﻿using Dflat.Core;
-using Dflat.Core.Construction;
 
-namespace Dflat.Chords.Construction
+namespace Dflat.Chords
 {
     public class ChordBuilder : IBuilder<Chord, ChordBuilder>
     {
@@ -61,8 +60,16 @@ namespace Dflat.Chords.Construction
 
         public bool HasRootNote() => RootNote is not null;
 
-        public ChordBuilder AddPitch(PitchBuilder pitchBuilder)
+        /// <summary>
+        /// Adds the pitchbuilder to the chord. The pitchbuilder is cloned by default, if you wish to disable this behavior, use <paramref name="forceNoClone"/>
+        /// </summary>
+        /// <param name="pitchBuilder">the pitchbuilder to be added</param>
+        /// <param name="forceNoClone">The <paramref name="pitchBuilder"/> is not cloned before adding</param>
+        /// <returns></returns>
+        public ChordBuilder AddPitch(PitchBuilder pitchBuilder, bool forceNoClone = false)
         {
+            if (!forceNoClone)
+                pitchBuilder = pitchBuilder.DeepClone();
             PitchBuilders.Add(pitchBuilder);
             return this;
         }
@@ -113,12 +120,6 @@ namespace Dflat.Chords.Construction
                 PitchBuilders = PitchBuilders.Where(x => x.Build().IsEnharmonicTo(pitch)).ToList();
             else
                 PitchBuilders = PitchBuilders.Where(x => x.Build().Equals(pitch)).ToList();
-            return this;
-        }
-
-        public ChordBuilder RemovePitch(PitchBuilder pitchBuilder)
-        {
-            PitchBuilders.Remove(pitchBuilder);
             return this;
         }
 

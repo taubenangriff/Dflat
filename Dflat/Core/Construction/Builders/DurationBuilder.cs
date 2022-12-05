@@ -1,4 +1,4 @@
-﻿namespace Dflat.Core.Construction
+﻿namespace Dflat.Core
 {
     public class DurationBuilder : IBuilder<Duration, DurationBuilder>
     {

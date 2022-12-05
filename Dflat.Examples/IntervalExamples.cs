@@ -1,5 +1,4 @@
 ﻿using Dflat.Intervals;
-using Dflat.Intervals.Construction;
 
 namespace Dflat.Examples
 {

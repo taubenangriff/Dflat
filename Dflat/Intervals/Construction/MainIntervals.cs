@@ -1,4 +1,4 @@
-﻿namespace Dflat.Intervals.Construction
+﻿namespace Dflat.Intervals
 {
     public static class MainIntervals
     {

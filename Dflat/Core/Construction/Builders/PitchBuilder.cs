@@ -1,4 +1,4 @@
-﻿namespace Dflat.Core.Construction
+﻿namespace Dflat.Core
 {
     public class PitchBuilder : IBuilder<Pitch, PitchBuilder>
     {

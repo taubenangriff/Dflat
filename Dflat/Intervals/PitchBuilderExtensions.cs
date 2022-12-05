@@ -1,6 +1,6 @@
-﻿using Dflat.Core.Construction;
+﻿using Dflat.Core;
 
-namespace Dflat.Intervals.Construction
+namespace Dflat.Intervals
 {
     public static class PitchBuilderExtensions
     {

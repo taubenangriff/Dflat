@@ -1,8 +1,7 @@
-﻿using Dflat.Core.Construction;
+﻿using Dflat.Core;
 using Dflat.Intervals;
-using Dflat.Intervals.Construction;
 
-namespace Dflat.Chords.Construction
+namespace Dflat.Chords
 {
     public class Triads
     {

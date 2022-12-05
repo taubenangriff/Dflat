@@ -13,7 +13,8 @@ namespace Dflat.Scales
     {
         public Pitch BasePitch { get; }
 
-        public IEnumerable<Interval> ScaleDegrees { get => throw new NotImplementedException("Scale as Intervals not yet implemented"); private set; }
+        public IEnumerable<Interval> ScaleDegrees { get => throw new NotImplementedException("Scale as Intervals not yet implemented"); set => throw new NotImplementedException("Scale as Intervals not yet implemented");
+    }
         public IEnumerable<Pitch> Pitches { get; }
 
         internal Scale(

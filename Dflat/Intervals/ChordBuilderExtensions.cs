@@ -1,5 +1,4 @@
-﻿using Dflat.Chords.Construction;
-using Dflat.Intervals.Construction;
+﻿using Dflat.Chords;
 
 namespace Dflat.Intervals
 {

@@ -1,5 +1,4 @@
-﻿using Dflat.Core.Construction;
-using Dflat.Core;
+﻿using Dflat.Core;
 using Dflat.Intervals;
 
 using Xunit;

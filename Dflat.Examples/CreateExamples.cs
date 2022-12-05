@@ -1,10 +1,6 @@
 ﻿using Dflat.Chords;
-using Dflat.Chords.Construction;
 using Dflat.Core;
-//All Creation logic is in the Dflat.Construction namespace.
-using Dflat.Core.Construction;
 using Dflat.Intervals;
-using Dflat.Intervals.Construction;
 
 namespace Dflat.Examples
 {

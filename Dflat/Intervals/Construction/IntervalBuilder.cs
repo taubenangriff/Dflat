@@ -1,7 +1,6 @@
-﻿using Dflat.Intervals;
-using Dflat.Core;
+﻿using Dflat.Core;
 
-namespace Dflat.Intervals.Construction
+namespace Dflat.Intervals
 {
     public class IntervalBuilder : IBuilder<Interval, IntervalBuilder>
     {
