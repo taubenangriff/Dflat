@@ -1,4 +1,4 @@
-﻿namespace Dflat.Core
+﻿namespace Dflat.Pitches
 {
     //all octaves that are playable on the piano.
     public enum Octave

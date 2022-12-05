@@ -1,4 +1,6 @@
 ﻿using Dflat.Core;
+using Dflat.Durations;
+using Dflat.Pitches;
 using System.Collections;
 
 namespace Dflat.Chords

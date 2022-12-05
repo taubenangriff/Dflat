@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Dflat.Core
+namespace Dflat.Pitches
 {
     public class CentAccidental : IFluentAccidental
     {

@@ -1,5 +1,9 @@
-﻿namespace Dflat.Core
+﻿using Dflat.Durations;
+using Dflat.Pitches;
+
+namespace Dflat.Core
 {
+    //todo move this out of pitchbuilder
     public class NoteBuilder : IBuilder<Note, NoteBuilder>
     {
         public PitchBuilder PitchBuilder { get; private set; }

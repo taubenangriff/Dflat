@@ -1,4 +1,4 @@
-﻿namespace Dflat.Core
+﻿namespace Dflat.Pitches
 {
     /// <summary>
     /// Represents an immutable Pitch with Base Pitch, Octave and accidentals.

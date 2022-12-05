@@ -1,4 +1,4 @@
-﻿using Dflat.Core;
+﻿using Dflat.Pitches;
 
 namespace Dflat.Intervals
 {

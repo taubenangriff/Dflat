@@ -1,5 +1,7 @@
 ﻿using Dflat.Core;
+using Dflat.Durations;
 using Dflat.Intervals;
+using Dflat.Pitches;
 
 namespace Dflat.Chords
 {

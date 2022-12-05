@@ -1,4 +1,10 @@
-﻿namespace Dflat.Core
+﻿using Dflat.Durations;
+using Dflat.Pitches;
+
+/// <summary>
+/// todo move this out of core...
+/// </summary>
+namespace Dflat.Core
 {
     /// <summary>
     /// A note is immutable. Every change to a note will have to return a new note!

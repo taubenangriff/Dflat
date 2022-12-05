@@ -1,4 +1,4 @@
-﻿namespace Dflat.Core
+﻿namespace Dflat.Durations
 {
     public static class DurationAccidentals
     {

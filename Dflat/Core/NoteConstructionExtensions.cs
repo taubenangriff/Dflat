@@ -1,5 +1,8 @@
 ﻿namespace Dflat.Core
 {
+    /// <summary>
+    /// todo move this out of core
+    /// </summary>
     public static class NoteConstructionExtensions
     {
         /// <summary>

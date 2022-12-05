@@ -1,5 +1,6 @@
 ﻿using Dflat.Core;
 using Dflat.Intervals;
+using Dflat.Pitches;
 using System;
 using System.Collections;
 using System.Collections.Generic;

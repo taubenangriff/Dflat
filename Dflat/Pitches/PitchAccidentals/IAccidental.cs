@@ -1,4 +1,4 @@
-﻿namespace Dflat.Core
+﻿namespace Dflat.Pitches
 {
     public enum AccidentalCharacter { Sharp, Flat, Natural }
 

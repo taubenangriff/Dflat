@@ -1,4 +1,4 @@
-﻿namespace Dflat.Core
+﻿namespace Dflat.Pitches
 {
     /// <summary>
     /// Represents an Accidental that is not required to be in a half tone system.

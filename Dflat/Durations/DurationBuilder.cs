@@ -1,4 +1,6 @@
-﻿namespace Dflat.Core
+﻿using Dflat.Core;
+
+namespace Dflat.Durations
 {
     public class DurationBuilder : IBuilder<Duration, DurationBuilder>
     {
