@@ -1,6 +1,6 @@
 ﻿namespace Dflat.Pitches
 {
-    public class Pitches
+    public class MainPitches
     {
         #region OctavePitchBuilders 
 

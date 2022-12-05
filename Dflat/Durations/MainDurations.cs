@@ -1,8 +1,7 @@
 ﻿namespace Dflat.Durations
 {
-    public class Durations
+    public class MainDurations
     {
-
         public class BaseDurationedDurationBuilder
         {
             public BaseDuration BaseDuration { get; }

@@ -52,7 +52,7 @@ namespace Dflat.Pitches
         /// <returns></returns>
         public static PitchBuilder Create()
         {
-            return Pitches.Small().C().Natural();
+            return MainPitches.Small().C().Natural();
         }
 
         public PitchBuilder DeepClone() => PitchBuilder.Create(this.Build());

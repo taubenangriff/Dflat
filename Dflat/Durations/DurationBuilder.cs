@@ -38,7 +38,7 @@ namespace Dflat.Durations
         /// <returns></returns>
         public static DurationBuilder Create()
         {
-            return Durations.Whole().WithDot();
+            return MainDurations.Whole().WithDot();
         }
 
         public DurationBuilder WithBaseDuration(BaseDuration baseDuration)
