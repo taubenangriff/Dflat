@@ -1,6 +1,8 @@
-﻿namespace Dflat.Intervals
+﻿using Dflat.GeneralizedIntervalSystems;
+
+namespace Dflat.Intervals
 {
-    public class Interval
+    public class Interval : IInterval
     {
         public BaseInterval BaseInterval { get; }
         public IntervalDirection Direction { get; }

@@ -1,6 +1,6 @@
 ﻿namespace Dflat.GeneralizedIntervalSystems
 {
-    public  interface IInterval
+    public interface IInterval
     {
 
     }

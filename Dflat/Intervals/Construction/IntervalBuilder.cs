@@ -31,6 +31,10 @@ namespace Dflat.Intervals
 
         public Interval Build()
         {
+            if (BaseInterval.IsPerfect() && Modifier == IntervalModifier.Major)
+                throw new InvalidOperationException("A perfect interval cannot be major!");
+            if (BaseInterval.IsPerfect() && Modifier == IntervalModifier.Minor)
+                throw new InvalidOperationException("A perfect interval cannot be minor!");
             return new Interval(BaseInterval, Direction, Modifier);
         }
 
@@ -52,15 +56,27 @@ namespace Dflat.Intervals
             return this;
         }
 
-        public IntervalBuilder Augment()
+        public IntervalBuilder AsAugmented()
         { 
             Modifier = IntervalModifier.Augmented;
             return this;
         }
 
-        public IntervalBuilder Diminish()
+        public IntervalBuilder AsDiminished()
         {
             Modifier = IntervalModifier.Diminished;
+            return this;
+        }
+
+        public IntervalBuilder Diminish()
+        {
+            Modifier = Modifier.GetPrev();
+            return this;
+        }
+
+        public IntervalBuilder Augment()
+        {
+            Modifier = Modifier.GetNext();
             return this;
         }
 

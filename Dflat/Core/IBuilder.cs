@@ -1,13 +1,16 @@
 ﻿namespace Dflat.Core
 {
     //Just an interface so I keep everything clean.
-    internal interface IBuilder<TResult, TBuilder>
+    public interface IBuilder<TResult, TBuilder> : IBuilder<TResult>
     {
         static IBuilder<TResult, TBuilder> Create(TResult fromResult) => throw new NotImplementedException();
         static IBuilder<TResult, TBuilder> Create() => throw new NotImplementedException();
 
-        TResult Build();
-
         TBuilder DeepClone();
+    }
+
+    public interface IBuilder<TResult>
+    {
+        TResult Build();
     }
 }

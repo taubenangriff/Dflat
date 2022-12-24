@@ -1,14 +1,16 @@
-﻿namespace Dflat.Pitches
+﻿using Dflat.GeneralizedIntervalSystems;
+
+namespace Dflat.Pitches
 {
     /// <summary>
     /// Represents an immutable Pitch with Base Pitch, Octave and accidentals.
     /// </summary>
-    public class Pitch : IComparable<Pitch>, IEquatable<Pitch>
+    public class Pitch : IComparable<Pitch>, IEquatable<Pitch>, IElement
     {
         public BasePitch BasePitch { get; init; }
-        public Octave Octave { get; init; }
         public IHalfToneAccidental? Accidental { get; init; }
         public IFluentAccidental? AdditionalCentAccidental { get; init; }
+        public Octave Octave { get; init; }
 
         public float AccidentalAlteration { get; }
 
