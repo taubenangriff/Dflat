@@ -21,8 +21,7 @@ namespace Dflat.Core
     {
         int pitchCount = Enum.GetValues<BasePitch>().Length;
 
-        public BaseInterval GetCongruent(int interval) =>
-            new BaseInterval(interval < 0, (Interval)(Math.Abs(interval) % pitchCount));
+        public BaseInterval GetCongruent(int interval) => (Interval)((Math.Abs(interval * pitchCount) + interval) % pitchCount);
 
         public int GetCongruentInverse(BaseInterval interval) => (int)interval.Interval;
 

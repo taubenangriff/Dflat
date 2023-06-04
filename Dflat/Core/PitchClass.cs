@@ -37,18 +37,16 @@ namespace Dflat.Core
     }
 
     public class BaseInterval {
-        public bool Downwards;
         public Interval Interval; 
 
-        public BaseInterval(bool downwards, Interval interval) 
+        public BaseInterval(Interval interval) 
         {
-            Downwards = downwards;
             Interval = interval; 
         }
 
         public override string ToString()
         {
-            return Interval.ToString() + (Downwards ? " Down" : " Up");
+            return Interval.ToString();
         }
     }
 
