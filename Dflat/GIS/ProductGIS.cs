@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace Dflat.GIS
 {
+    /// <summary>
+    /// A product GIS of two GIS structures.
+    /// </summary>
+    /// <typeparam name="TE1">TElement of GIS1</typeparam>
+    /// <typeparam name="TE2">TElement of GIS2</typeparam>
+    /// <typeparam name="TI1">TInterval of GIS1</typeparam>
+    /// <typeparam name="TI2">TInterval of GIS2</typeparam>
     public class ProductGIS<TE1, TE2, TI1, TI2> : IGIS<Tuple<TE1, TE2>, Tuple<TI1, TI2>>
     {
         IGIS<TE1, TI1> GIS1; 
